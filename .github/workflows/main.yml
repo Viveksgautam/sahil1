@@ -1,0 +1,17 @@
+name: Print Message Workflow
+
+on: [push]
+
+jobs:
+  print-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greet the user
+        run: echo "Hello, GitHub Actions user!"
+        shell: bash
+        
+      - name: Print a warning message
+        run: echo "::warning::This is a warning message."
+        
+      - name: Print an error message with annotation
+        run: echo "::error file=app.js,line=1,col=5::This is an error in app.js."
